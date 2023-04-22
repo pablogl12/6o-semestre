@@ -227,9 +227,11 @@ var dino;
 var textoScore;
 var suelo;
 var gameOver;
+var Restart;
 
 function Start() {
     gameOver = document.querySelector(".game-over");
+    Restart = document.q
     suelo = document.querySelector(".suelo");
     contenedor = document.querySelector(".contenedor");
     textoScore = document.querySelector(".score");
@@ -249,6 +251,16 @@ function Update() {
     DetectarColision();
 
     velY -= gravedad * deltaTime;
+}
+
+function Restart() {
+    gameOver = document.querySelector(".game-over");
+    suelo = document.querySelector(".suelo");
+    contenedor = document.querySelector(".contenedor");
+    textoScore = document.querySelector(".score");
+    dino = document.querySelector(".dino");
+    document.addEventListener("keydown", HandleKeyDown);
+
 }
 
 function HandleKeyDown(ev){
